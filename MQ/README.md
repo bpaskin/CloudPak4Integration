@@ -1,6 +1,6 @@
 # Installing the MQ Operator and Running a QMGR #
 
-All +++ NAMESPACE +++ must be updated in the yaml files.
+All *NAMESPACE* must be updated in the yaml files.
 
 These steps will install the MQ OCP Operator and create a QMGR with a few Queues and a channel.
 
