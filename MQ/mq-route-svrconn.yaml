@@ -1,0 +1,18 @@
+# This is used when connecting from outside of OCP.  SNI names must
+# be used for the host.  See: https://www.ibm.com/support/pages/ibm-websphere-mq-how-does-mq-provide-multiple-certificates-certlabl-capability
+# i.e. CHANNEL(EXTERNAL.SVRCONN) would be external2e-svrconn
+# Service names must match
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: single-instance-qm-ibm-mq-traffic
+  namespace: [NAMESPACE]
+spec:
+  host: [CHANNELNAME].chl.mq.ibm.com
+  to:
+    kind: Service
+    name: single-instance-qm-ibm-mq
+  port:
+    targetPort: 1414
+  tls:
+    termination: passthrough

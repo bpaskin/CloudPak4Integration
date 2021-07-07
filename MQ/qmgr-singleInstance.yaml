@@ -1,0 +1,40 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  namespace: [NAMESPACE]
+  name: single-instance-qm
+spec:
+  license:
+    accept: true
+    license: L-RJON-BXUPZ2
+    use: NonProduction
+  web:
+    enabled: false
+  version: 9.2.2.0-r1
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  queueManager:
+    name: QM1
+    mqsc:
+      - configMap:
+          items:
+            - mq.mqsc
+          name: mq-mqsc
+    availability:
+      type: SingleInstance
+    storage:
+      queueManager:
+        type: ephemeral
+  pki:
+    keys:
+    - name: default
+      secret:
+        secretName: mq-tls
+        items:
+          - tls.key
+          - tls.crt
