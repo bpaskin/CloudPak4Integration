@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmJMSClientInput.msgnode="ComIbmJMSClientInput.msgnode" xmlns:ComIbmJMSClientOutput.msgnode="ComIbmJMSClientOutput.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="AMQ2MQ.msgflow" nsPrefix="AMQ2MQ.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="AMQ2MQ" bundleName="AMQ2MQ" pluginId="AMQ2MQ"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/AMQ2MQ/icons/full/obj16/AMQ2MQ.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/AMQ2MQ/icons/full/obj30/AMQ2MQ.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmJMSClientInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="53,112" sourceQueueName="IN.Q" jmsProviderName="{AMQ2MQPolicies}:AMQ2MQ" initialContextFactory="" backoutDestination="BO.Q" messageDomainProperty="BLOB" transactionMode="yes">
+        <translation xmi:type="utility:ConstantString" string="ActiveMQ Input"/>
+      </nodes>
+      <nodes xmi:type="ComIbmJMSClientOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="289,112" destinationQueueName="OUT.Q" jmsProviderName="{AMQ2MQPolicies}:IBMMQ" initialContextFactory="" transactionMode="yes">
+        <translation xmi:type="utility:ConstantString" string="MQ JMS Output"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>
