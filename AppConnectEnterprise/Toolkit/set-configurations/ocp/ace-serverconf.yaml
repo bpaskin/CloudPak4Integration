@@ -1,0 +1,8 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: server-conf
+  namespace: cp4i
+spec:
+  type: serverconf
+  contents: |-

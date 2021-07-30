@@ -1,0 +1,8 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: setdbparms
+  namespace: cp4i
+spec:
+  type: setdbparms
+  contents: |-
