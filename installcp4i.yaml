@@ -18,9 +18,7 @@ spec:
   updateStrategy:
     registryPoll:
       interval: 45m
-
-# ---------------------------------------- #
-
+---
 # IBM Operator Catalog
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
@@ -35,9 +33,7 @@ spec:
   updateStrategy:
     registryPoll:
       interval: 45m
-
-# ---------------------------------------- #
-
+---
 # Creates the necessary security for the Operator under the mq namespace
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
@@ -47,8 +43,7 @@ metadata:
 spec:
   targetNamespaces:
   - [NAMESPACE]
-
-# ---------------------------------------- #
+---
 # install CP4I and all applications
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
