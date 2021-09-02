@@ -17,6 +17,11 @@ public class UsingMQSimpleConnectionPool {
 
 	private static String QMGR_NAME = "CLUSQM1";
 	private static String QUEUE_NAME = "CLUSQM1.LQ";
+	private static String QMGR_HOST="lovecraft";
+	private static int QMGR_PORT = 2000;
+	private static String CHANNEL_NAME = "CLUSQM1.SVRCONN";
+	private static String USERID = "brian";
+	private static String PASSWORD = "mypassword";
 	
 	public static void main(String[] args) {
 
@@ -35,11 +40,11 @@ public class UsingMQSimpleConnectionPool {
     	gmo.waitInterval = 5000; // wait upto 5 seconds for a message
     	
     	Hashtable<String, Object> props = new Hashtable<String, Object>();
-        props.put(MQConstants.HOST_NAME_PROPERTY, "lovecraft"); 
-        props.put(MQConstants.PORT_PROPERTY, 2000);
-        props.put(MQConstants.CHANNEL_PROPERTY, "CLUSQM1.SVRCONN");
-        props.put(MQConstants.USER_ID_PROPERTY, "brian");
-        props.put(MQConstants.PASSWORD_PROPERTY, "mypassword");
+        props.put(MQConstants.HOST_NAME_PROPERTY, QMGR_HOST); 
+        props.put(MQConstants.PORT_PROPERTY, QMGR_PORT);
+        props.put(MQConstants.CHANNEL_PROPERTY, CHANNEL_NAME);
+        props.put(MQConstants.USER_ID_PROPERTY, USERID);
+        props.put(MQConstants.PASSWORD_PROPERTY, PASSWORD);
 
     	
         try {
@@ -72,5 +77,4 @@ public class UsingMQSimpleConnectionPool {
         	e.printStackTrace(System.err);
         }
      }
-
 }
