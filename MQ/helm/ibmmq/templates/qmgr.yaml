@@ -1,0 +1,60 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: mq-qmgr-{{- .Values.queuemanager.name | lower}}
+spec:
+  license:
+    accept: true
+    license:  {{- .Values.queuemanager.license | upper | indent 1}}
+    use: NonProduction
+  pki:
+    keys:
+      - name: default
+        secret:
+          secretName: mq-tls-key-{{- .Values.queuemanager.name | lower}}
+          items: 
+          - tls.key
+          - tls.crt
+    trust:
+      - name: default
+        secret:
+          secretName: mq-tls-trust-{{- .Values.queuemanager.name | lower}}
+          items:
+          {{- range $i, $item := .Values.trust.certs}}
+          - tls{{$i}}.crt
+          {{- end}}        
+  web:
+    enabled: false
+  version: {{- .Values.queuemanager.version | indent 1}}
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  queueManager:
+    name: {{- .Values.queuemanager.name | indent 1}}
+    mqsc:
+      - configMap:
+          items:
+            - mqsc
+          name: mq-mqsc-{{- .Values.queuemanager.name | lower}}
+    availability:
+      type: {{- .Values.queuemanager.type | indent 1}} 
+    storage:
+      defaultClass: {{- .Values.queuemanager.storageclass | indent 1}}
+      defaultDeleteClaim: {{- .Values.queuemanager.deletestorageclaim | indent 1}}
+      queueManager:
+        type: persistent-claim
+      recoveryLogs:
+        enabled: true
+      persistedData:
+        enabled: true
+    resources:
+      limits:
+        cpu: '{{- .Values.queuemanager.resources.limits.cpu}}'
+        memory: {{- .Values.queuemanager.resources.limits.memory | indent 1}}
+      requests:
+        cpu: '{{- .Values.queuemanager.resources.requests.cpu}}'
+        memory: {{- .Values.queuemanager.resources.requests.memory | indent 1}}

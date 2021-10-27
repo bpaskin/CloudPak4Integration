@@ -1,0 +1,17 @@
+{{$qmgr := .Values.queuemanager.name | lower}}
+{{- range $i, $item := .Values.external.channels}}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: mq-chlroute-{{- $qmgr}}{{$i}}
+spec:
+  host: {{- $item | lower | indent 1}}.chl.mq.ibm.com
+  to:
+    kind: Service
+    name: mq-qmgr-{{- $qmgr}}-ibm-mq
+  port:
+    targetPort: 1414
+  tls:
+    termination: passthrough
+---
+{{- end}}

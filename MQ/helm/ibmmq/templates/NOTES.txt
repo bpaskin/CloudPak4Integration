@@ -1,0 +1,4 @@
+Welcome to IBM MQ!
+
+Your Queue Manager (QMGR) is {{.Values.queuemanager.name}} and is defined as  {{.Values.queuemanager.type}}
+
