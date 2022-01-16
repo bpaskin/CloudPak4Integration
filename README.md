@@ -17,3 +17,5 @@ These steps will install the MQ OCP Operator and create a QMGR with a few Queues
 5. Connect to the IBM Docker Catalog and install the necessary operators using the command `oc apply -f installcp4i.yaml`
 
 It may take awhile to pull and install all features of the CloudPak.  This does not create a Platform Navigator or other integrations.
+
+A new `imagePullSecret.sh` can be used to create the necessary yaml and apply without having to run an extra `oc` command.  It is not necessary, but it is interesting seeing how it is generated.
