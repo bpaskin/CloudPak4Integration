@@ -28,3 +28,4 @@ type: kubernetes.io/dockerconfigjson" > ./secret.yaml
 
 oc apply -f secret.yaml
 rm secret.yaml
+ 
