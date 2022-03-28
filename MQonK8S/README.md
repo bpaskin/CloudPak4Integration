@@ -18,3 +18,8 @@ Please note: a Secret called `ibm-entitlement-key` must be created that contains
 kubectl create secret docker-registry ibm-entitlement-key --docker-username=cp --docker-password=<entitlement-key> --docker-server=cp.icr.io --namespace=mq-demo
 ```
 
+To get the ingress of the QMGRs, use
+```
+kubectl describe service qmgr-qm1 | grep Ingress
+kubectl describe service qmgr-qm2 | grep Ingress
+```
