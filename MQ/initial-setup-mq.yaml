@@ -8,7 +8,7 @@ spec:
   displayName: IBMCS Operators
   publisher: IBM
   sourceType: grpc
-  image: docker.io/ibmcom/ibm-common-service-catalog:latest
+  image: icr.io/copen/ibm-common-service-catalog:latest
   updateStrategy:
     registryPoll:
       interval: 45m
@@ -23,7 +23,7 @@ spec:
   displayName: ibm-operator-catalog 
   publisher: IBM Content
   sourceType: grpc
-  image: docker.io/ibmcom/ibm-operator-catalog
+  image: icr.io/cpopen/ibm-operator-catalog
   updateStrategy:
     registryPoll:
       interval: 45m
