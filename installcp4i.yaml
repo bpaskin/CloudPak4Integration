@@ -51,7 +51,7 @@ metadata:
   name: ibm-cp-integration
   namespace: [NAMESPACE]
 spec:
-  channel: v1.5
+  channel: latest
   installPlanApproval: Automatic
   name: ibm-cp-integration
   source: ibm-operator-catalog
