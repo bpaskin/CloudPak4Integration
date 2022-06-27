@@ -1,0 +1,66 @@
+﻿apiVersion: appconnect.ibm.com/v1beta1
+kind: Dashboard
+metadata:
+  name: ace-dashboard
+  namespace: cp4i
+spec:
+  logLevel: info
+  license:
+    accept: true
+    license: L-APEH-C9NCK6
+    use: CloudPakForIntegrationNonProduction
+  disableConfigValidation: false
+  pod:
+    containers:
+      content-server:
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 1
+          initialDelaySeconds: 180
+          periodSeconds: 10
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 1
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: 250m
+            ephemeral-storage: 20Gi
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            ephemeral-storage: 5Gi
+            memory: 50Mi
+      control-ui:
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 1
+          initialDelaySeconds: 180
+          periodSeconds: 10
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 1
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: 500m
+            ephemeral-storage: 150Mi
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            ephemeral-storage: 50Mi
+            memory: 125Mi
+  useCommonServices: true
+  version: 12.0.4
+  logFormat: basic
+  storage:
+    class: ibmc-file-gold-gid
+    selector: {}
+    size: 5Gi
+    sizeLimit: '0'
+    type: persistent-claim
+  replicas: 1
