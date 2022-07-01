@@ -1,0 +1,153 @@
+# After applying this with the oc command, 
+# 1. get the entitlement key https://myibm.ibm.com/products-services/containerlibrary
+# 2. update OCP with the userid and entitlement key using the command "oc create secret docker-registry ibm-entitlement-key --docker-server=cp.icr.io --docker-username=cp --docker-password=ENTITLEMENT_KEY --docker-email=OCP_LOGIN_CREDENTIALS"
+---
+apiVersion: project.openshift.io/v1
+description: "Cloud Pak for Integration"
+displayName: cp4i
+kind: ProjectRequest
+metadata:
+    name: cp4i
+---
+# IBM Operator Catalog
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-operator-catalog
+  namespace: openshift-marketplace
+spec:
+  displayName: ibm-operator-catalog 
+  publisher: IBM Content
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-operator-catalog
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+---
+# Creates the necessary security for the Operator under the mq namespace
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: ibmmq-operator
+  namespace: cp4i
+spec:
+  targetNamespaces:
+  - cp4i
+---
+# Platform Navigator
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-integration-platform-navigator
+  namespace: cp4i
+spec:
+  channel: v6.0
+  installPlanApproval: Automatic
+  name: ibm-integration-platform-navigator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# Automation Foundation
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-integration-asset-repository
+  namespace: cp4i
+spec:
+  channel: v1.5
+  installPlanApproval: Automatic
+  name: ibm-integration-asset-repository
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# Integration Operatons Dashboard
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-integration-operations-dashboard
+  namespace: cp4i
+spec:
+  channel: v2.6-lts
+  installPlanApproval: Automatic
+  name: ibm-integration-operations-dashboard
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# API Connect
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-apiconnect
+  namespace: cp4i
+spec:
+  channel: v3.0
+  installPlanApproval: Automatic
+  name: ibm-apiconnect
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# App Connect
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-appconnect
+  namespace: cp4i
+spec:
+  channel: v5.0-lts
+  installPlanApproval: Automatic
+  name: ibm-appconnect
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# Aspera
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: aspera-hsts-operator
+  namespace: cp4i
+spec:
+  channel: v1.5
+  installPlanApproval: Automatic
+  name: aspera-hsts-operator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# Datapower 
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: datapower-operator
+  namespace: cp4i
+spec:
+  channel: v1.6
+  installPlanApproval: Automatic
+  name: datapower-operator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# Event Streams
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-eventstreams
+  namespace: cp4i
+spec:
+  channel: v3.0
+  installPlanApproval: Automatic
+  name: ibm-eventstreams
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# IBM MQ
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-mq
+  namespace: cp4i
+spec:
+  channel: v2.0
+  installPlanApproval: Automatic
+  name: ibm-mq
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+...
