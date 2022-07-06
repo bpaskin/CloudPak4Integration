@@ -28,7 +28,7 @@ spec:
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  name: cp4i
+  name: ibm-integration-operatorgrou
   namespace: cp4i
 spec:
   targetNamespaces:
