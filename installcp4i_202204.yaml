@@ -41,7 +41,7 @@ metadata:
   name: ibm-integration-platform-navigator
   namespace: cp4i
 spec:
-  channel: v6.0
+  channel: v7.0
   installPlanApproval: Automatic
   name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
@@ -80,7 +80,7 @@ metadata:
   name: ibm-apiconnect
   namespace: cp4i
 spec:
-  channel: v3.0
+  channel: v3.2
   installPlanApproval: Automatic
   name: ibm-apiconnect
   source: ibm-operator-catalog
@@ -93,7 +93,7 @@ metadata:
   name: ibm-appconnect
   namespace: cp4i
 spec:
-  channel: v5.0-lts
+  channel: v7.0
   installPlanApproval: Automatic
   name: ibm-appconnect
   source: ibm-operator-catalog
@@ -132,7 +132,7 @@ metadata:
   name: ibm-eventstreams
   namespace: cp4i
 spec:
-  channel: v3.0
+  channel: v3.1
   installPlanApproval: Automatic
   name: ibm-eventstreams
   source: ibm-operator-catalog
@@ -145,7 +145,7 @@ metadata:
   name: ibm-mq
   namespace: cp4i
 spec:
-  channel: v2.0
+  channel: v2.2
   installPlanApproval: Automatic
   name: ibm-mq
   source: ibm-operator-catalog
