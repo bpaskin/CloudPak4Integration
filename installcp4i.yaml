@@ -61,19 +61,6 @@ spec:
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
 ---
-# Integration Operatons Dashboard
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
-metadata:
-  name: ibm-integration-operations-dashboard
-  namespace: cp4i
-spec:
-  channel: v2.6-lts
-  installPlanApproval: Automatic
-  name: ibm-integration-operations-dashboard
-  source: ibm-operator-catalog
-  sourceNamespace: openshift-marketplace
----
 # API Connect
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -136,6 +123,19 @@ spec:
   channel: v3.2
   installPlanApproval: Automatic
   name: ibm-eventstreams
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+---
+# IBM Event Endpoint Management
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-eem
+  namespace: cp4i
+spec:
+  channel: 11.0
+  installPlanApproval: Automatic
+  name: ibm-eem-operator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
 ---
