@@ -130,12 +130,12 @@ spec:
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: ibm-eem
+  name: ibm-eventendpointmanagement
   namespace: cp4i
 spec:
-  channel: 11.0
+  channel: v11.0
   installPlanApproval: Automatic
-  name: ibm-eem-operator
+  name: ibm-eventendpointmanagement
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
 ---
