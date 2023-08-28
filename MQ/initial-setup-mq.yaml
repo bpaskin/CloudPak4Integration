@@ -1,18 +1,3 @@
-# IBM Common Services Operator Catalog
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: opencloud-operators
-  namespace: openshift-marketplace
-spec:
-  displayName: IBMCS Operators
-  publisher: IBM
-  sourceType: grpc
-  image: icr.io/copen/ibm-common-service-catalog:latest
-  updateStrategy:
-    registryPoll:
-      interval: 45m
----
 # IBM Operator Catalog
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
@@ -33,10 +18,10 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: ibmmq-operator
-  namespace: [NAMESPACE]
+  namespace: cp4i
 spec:
   targetNamespaces:
-  - [NAMESPACE]
+  - cp4i
 ---
 # Install the MQ Operator in All Namespaces
 apiVersion: operators.coreos.com/v1alpha1
@@ -45,7 +30,7 @@ metadata:
   name: ibm-mq
   namespace: openshift-operators
 spec:
-  channel: v1.5
+  channel: 2.4
   name: ibm-mq
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
