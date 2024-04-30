@@ -151,4 +151,17 @@ spec:
   name: ibm-mq
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
+---
+# Add for common services install
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-common-service-operator
+  namespace: cp4i
+spec:
+  channel: v4.6
+  installPlanApproval: Automatic
+  name: ibm-common-service-operator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
 ...
