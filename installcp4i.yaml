@@ -1,4 +1,4 @@
-# For CP4I 23.2 (OCP 4.10, 4.12)
+# For CP4I 2023.4 (OCP 4.12, 4.14)
 # After applying this with the oc command, 
 # 1. get the entitlement key https://myibm.ibm.com/products-services/containerlibrary
 # 2. update OCP with the userid and entitlement key using the command "oc create secret docker-registry ibm-entitlement-key --docker-server=cp.icr.io --docker-username=cp --docker-password=ENTITLEMENT_KEY --docker-email=OCP_LOGIN_CREDENTIALS"
