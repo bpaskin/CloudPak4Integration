@@ -42,7 +42,7 @@ metadata:
   name: ibm-integration-platform-navigator
   namespace: cp4i
 spec:
-  channel: v7.1
+  channel: v7.2
   installPlanApproval: Automatic
   name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
@@ -55,7 +55,7 @@ metadata:
   name: ibm-integration-asset-repository
   namespace: cp4i
 spec:
-  channel: v1.5
+  channel: v1.6
   installPlanApproval: Automatic
   name: ibm-integration-asset-repository
   source: ibm-operator-catalog
@@ -68,7 +68,7 @@ metadata:
   name: ibm-apiconnect
   namespace: cp4i
 spec:
-  channel: v5.0
+  channel: v5.1
   installPlanApproval: Automatic
   name: ibm-apiconnect
   source: ibm-operator-catalog
@@ -81,7 +81,7 @@ metadata:
   name: ibm-appconnect
   namespace: cp4i
 spec:
-  channel: v8.2
+  channel: v11.5
   installPlanApproval: Automatic
   name: ibm-appconnect
   source: ibm-operator-catalog
@@ -107,7 +107,7 @@ metadata:
   name: datapower-operator
   namespace: cp4i
 spec:
-  channel: v1.7
+  channel: v1.1.0
   installPlanApproval: Automatic
   name: datapower-operator
   source: ibm-operator-catalog
@@ -120,7 +120,7 @@ metadata:
   name: ibm-eventstreams
   namespace: cp4i
 spec:
-  channel: v3.2
+  channel: v3.3
   installPlanApproval: Automatic
   name: ibm-eventstreams
   source: ibm-operator-catalog
@@ -133,7 +133,7 @@ metadata:
   name: ibm-eventendpointmanagement
   namespace: cp4i
 spec:
-  channel: v11.0
+  channel: v11.1
   installPlanApproval: Automatic
   name: ibm-eventendpointmanagement
   source: ibm-operator-catalog
@@ -146,7 +146,7 @@ metadata:
   name: ibm-mq
   namespace: cp4i
 spec:
-  channel: v2.4
+  channel: v3.1
   installPlanApproval: Automatic
   name: ibm-mq
   source: ibm-operator-catalog
