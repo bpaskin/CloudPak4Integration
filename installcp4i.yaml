@@ -107,7 +107,7 @@ metadata:
   name: datapower-operator
   namespace: cp4i
 spec:
-  channel: v1.1.0
+  channel: v1.10
   installPlanApproval: Automatic
   name: datapower-operator
   source: ibm-operator-catalog
