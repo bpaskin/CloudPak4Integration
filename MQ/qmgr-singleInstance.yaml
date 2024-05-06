@@ -1,16 +1,15 @@
-apiVersion: mq.ibm.com/v1beta1
+piVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  namespace: [NAMESPACE]
   name: single-instance-qm
 spec:
   license:
     accept: true
-    license: L-RJON-BXUPZ2
+    license: L-VTPK-22YZPK
     use: NonProduction
   web:
     enabled: false
-  version: 9.2.2.0-r1
+  version: 9.3.5.1-r1
   template:
     pod:
       containers:
@@ -23,8 +22,8 @@ spec:
     mqsc:
       - configMap:
           items:
-            - mq.mqsc
-          name: mq-mqsc
+            - mqsc
+          name: mq-mqsc-qm1
     availability:
       type: SingleInstance
     storage:
