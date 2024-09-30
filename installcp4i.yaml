@@ -81,7 +81,7 @@ metadata:
   name: ibm-appconnect
   namespace: cp4i
 spec:
-  channel: v11.5
+  channel: v12.3
   installPlanApproval: Automatic
   name: ibm-appconnect
   source: ibm-operator-catalog
