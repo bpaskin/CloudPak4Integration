@@ -1,0 +1,125 @@
+# The IBM entitlement key can be obtained here: https://myibm.ibm.com/products-services/containerlibrary
+# Store the entitlment key as a secret: 
+# oc create secret docker-registry ibm-entitlement-key --docker-server=cp.icr.io --docker-username=cp --docker-password=ENTITLEMENT_KEY
+---
+# TLS key and cert chain
+kind: Secret
+apiVersion: v1
+metadata:
+  name: mq-tls
+  namespace: cp4i
+  uid: 01b635c0-d47b-4262-9ac0-7e8ff8602f22
+  resourceVersion: '37912710'
+  creationTimestamp: '2025-05-29T21:24:20Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2025-05-30T11:18:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:tls.crt': {}
+          'f:tls.key': {}
+        'f:type': {}
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDVENDQWZHZ0F3SUJBZ0lVR0tiaE5ZWXJMZVdqUFBVTlp5RldJTjJQWExRd0RRWUpLb1pJaHZjTkFRRUwKQlFBd0ZERVNNQkFHQTFVRUF3d0piRzlqWVd4b2IzTjBNQjRYRFRJd01ERXdOakV3TURjeU4xb1hEVE13TURFdwpNekV3TURjeU4xb3dGREVTTUJBR0ExVUVBd3dKYkc5allXeG9iM04wTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGCkFBT0NBUThBTUlJQkNnS0NBUUVBem5EbkpGaHhFMGRMTFdhOUZZQlBvakZNdWVSL1pESXJZTEE0OGFWYVNNYU8KRjhNT0o0RGpHQWJ1L0UwbjlIR3JxSXI5bnRSc29SZkhjMFdhcExDcFdwdXdnWlBFSXVXR25MS2xjdVJtYnRVVApUUlkvQkhITEtrVUFncnlCUXVqZFh2RFRobnltYXZCUGpLM1QxZlZFMGNFT1lHQTlHanJYU0IzT2hQR1pHQmxOCmM5NXppZEZSOVZyWHQwRFJDVkFrNjRmYlRoa3V2SDh1TkV1VGFodlVFOVJIZmRzajJzZU81S0k3bmdYMG1IUUIKcUlMdVAzcGEreU1WNUc4TlBaalN4U0IwQjNlS3YraUNjV2hSdTZSRmIyZmNmZXpnbm1TcFJYVTUwS1lxV1piZApvc0czaFFxU1JRUTJZUmR5NzZaMGJKb3FGM3N0aGJJaTZ5TmYvTVQ5ZndJREFRQUJvMU13VVRBZEJnTlZIUTRFCkZnUVVIQlBGY0FyTy9ZUmxiZ0tobmkxSVdnS0Z5VEF3SHdZRFZSMGpCQmd3Rm9BVUhCUEZjQXJPL1lSbGJnS2gKbmkxSVdnS0Z5VEF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBWkZ6SQpaLzZOay9TQmY0WXJHdVdNSzVjTTRLdldjWUdXQWlndTZ1TzZvV2VUVmdYamtGbE9GZ2RHRVhpSjFZNi9mRFBCCitaMVE0SERMYm1hbGE1aXRqeVhXbWFsRTFFOHR2bThGMDA5ZEFPL0oxUmNyS1VZcUFKbGJQNTZtbmt1QmtqZE0KYzAyMkhXOTd0RUpkYXViTlF2ZWJraDhZK1loUGVkV242ZmFtMVM1S2cwYUlVUWRKd0FuZDlCb2hLVkk3SHFFZgpoUktDYmJFZzNySXlSS0FLdk5DRXlvMjY4b3VIcll3Mi9WMEhMU0VnWEU3UTFxWTVKaXF6Y3Iyb0EvU2xZdGZwCnZYZFhKajA3OGJ1N3hrS2FxZkxpN3FTSzdjSVRjWjNWcldGOWZCbEh5MVV1K2V1NVNhN29udFR2MktON2Joc1QKNGczVTlMdWR2L01xTE5EWDVnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRXlEQ0NBN0NnQXdJQkFnSVFEUFc5Qml0V0F2UjZ1RkFzSTh6d1pqQU5CZ2txaGtpRzl3MEJBUXNGQURCaApNUXN3Q1FZRFZRUUdFd0pWVXpFVk1CTUdBMVVFQ2hNTVJHbG5hVU5sY25RZ1NXNWpNUmt3RndZRFZRUUxFeEIzCmQzY3VaR2xuYVdObGNuUXVZMjl0TVNBd0hnWURWUVFERXhkRWFXZHBRMlZ5ZENCSGJHOWlZV3dnVW05dmRDQkgKTWpBZUZ3MHlNVEF6TXpBd01EQXdNREJhRncwek1UQXpNamt5TXpVNU5UbGFNRmt4Q3pBSkJnTlZCQVlUQWxWVApNUlV3RXdZRFZRUUtFd3hFYVdkcFEyVnlkQ0JKYm1NeE16QXhCZ05WQkFNVEtrUnBaMmxEWlhKMElFZHNiMkpoCmJDQkhNaUJVVEZNZ1VsTkJJRk5JUVRJMU5pQXlNREl3SUVOQk1UQ0NBU0l3RFFZSktvWklodmNOQVFFQkJRQUQKZ2dFUEFEQ0NBUW9DZ2dFQkFNejNFR0pQcHJ0amIrMlFVbGJGYlNkN2VoSldpdkgwK2RibjRZKzlsYXZ5WUVFVgpjTnNTQVBvbkNyVlhPRnQ5c2xHVGNaVU9ha0dVV3pVYitudjZ1OFcrSkREK1Z1L0U4MzJYNHhUMUZFM0xweER5CkZ1cXJJdkF4SWhGaGFaQW11bmpabHgvamZXYXJkVVNWYzhpcy8rOWRDb3BaUStHc3Nqb1A4MGo4MTJzM3dXUGMKM2tiVzIwWCtmU1A5a09oUkJ4NVJvMS90U1VaVWZ5eUl4ZlFUbkpjVlBBUG9vVG5jYVF3eXdhOFdWMHlVUjBKOApvc2ljZmViVVRWU3ZRcG1vd1FUQ2Q1eldTT1RPRWVBcWdKbndRM0RQUDNacjBVeEpxeVJld2cyQy9VYW9xMnlUCnpHSlNRbldTK0pyNlhsNnlzR0hsSHgrNWZ3bVk2RDM2ZzM5SGFhRUNBd0VBQWFPQ0FZSXdnZ0YrTUJJR0ExVWQKRXdFQi93UUlNQVlCQWY4Q0FRQXdIUVlEVlIwT0JCWUVGSFNGZ01CbXg5ODMzcys5S1RlcUF4Mis3YzBYTUI4RwpBMVVkSXdRWU1CYUFGRTRpVkNBWWxlYmpidVlQK3ZxNUV1MEdGNDg1TUE0R0ExVWREd0VCL3dRRUF3SUJoakFkCkJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUlLd1lCQlFVSEF3SXdkZ1lJS3dZQkJRVUhBUUVFYWpCb01DUUcKQ0NzR0FRVUZCekFCaGhob2RIUndPaTh2YjJOemNDNWthV2RwWTJWeWRDNWpiMjB3UUFZSUt3WUJCUVVITUFLRwpOR2gwZEhBNkx5OWpZV05sY25SekxtUnBaMmxqWlhKMExtTnZiUzlFYVdkcFEyVnlkRWRzYjJKaGJGSnZiM1JICk1pNWpjblF3UWdZRFZSMGZCRHN3T1RBM29EV2dNNFl4YUhSMGNEb3ZMMk55YkRNdVpHbG5hV05sY25RdVkyOXQKTDBScFoybERaWEowUjJ4dlltRnNVbTl2ZEVjeUxtTnliREE5QmdOVkhTQUVOakEwTUFzR0NXQ0dTQUdHL1d3QwpBVEFIQmdWbmdRd0JBVEFJQmdabmdRd0JBZ0V3Q0FZR1o0RU1BUUlDTUFnR0JtZUJEQUVDQXpBTkJna3Foa2lHCjl3MEJBUXNGQUFPQ0FRRUFrUEZ3eXlpWGFaZDhkUDNBK2laN1U2dXR6V1g5dXB3R25JclhXa09IN1UxTVZsK3QKd2NXMUJTQXVXZEgvU3ZXZ0t0aXdsYTNKTGtvNzE2ZjJiNGdwL0RBL0pJUzd3N2Q3a3djc3I0ZHJkalB0QUZWUwpzbG1lNUxuUTg5L25ELzdkK01TNUVIS0JDUVJmejVlZUxqSjFqcythV05KWE1YNDNBWUd5Wm0wcEdyRm1DVzNSCmJwRDB1Zm92QVJURlhGWmtBZGw5aDZnNFU1K0xYVVp0WE1ZbmhJSFVmb3lNbzV0UzU4YUk3RGQ4S3Z2d1ZWbzQKY2hEWUFCUFBUSFBicWpjMXFDbUJhWngydk40WWU1RFV5cy92WndQOUJGb2hGckgvNmovZjNJTDE2L1Jaa2lNTgpKQ3FWSlV6S29aSG0xTGVzaDNTejhXMmptZHY1MWIyRVFKOEhtQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUc3VENDQmRXZ0F3SUJBZ0lRQ3F1TG14cHdNTWJvcWdzV1l6WXNsekFOQmdrcWhraUc5dzBCQVFzRkFEQloKTVFzd0NRWURWUVFHRXdKVlV6RVZNQk1HQTFVRUNoTU1SR2xuYVVObGNuUWdTVzVqTVRNd01RWURWUVFERXlwRQphV2RwUTJWeWRDQkhiRzlpWVd3Z1J6SWdWRXhUSUZKVFFTQlRTRUV5TlRZZ01qQXlNQ0JEUVRFd0hoY05NalV3Ck1UQTVNREF3TURBd1doY05Nall3TVRJek1qTTFPVFU1V2pCN01Rc3dDUVlEVlFRR0V3SlZVekVSTUE4R0ExVUUKQ0JNSVRtVjNJRmx2Y21zeER6QU5CZ05WQkFjVEJrRnliVzl1YXpFME1ESUdBMVVFQ2hNclNXNTBaWEp1WVhScApiMjVoYkNCQ2RYTnBibVZ6Y3lCTllXTm9hVzVsY3lCRGIzSndiM0poZEdsdmJqRVNNQkFHQTFVRUF3d0pLaTVwClltMHVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE5UGJjVGxCOE4xdEMKT2dnd3U1MGVkWThseHIwOGZtaE4rWVBqQWJzVEhmYnpyTTZvOEltRVhHYTlPNENaQ2F3T0o5LzNMN0E3L0djOQpqVXJKZXJpNlhBQkY1Ly9Gd1RYRkVxdnllOU5HODZxT2xrdnFOUG5LWm51RHB3OC9XN0dxai9ZWWVRb1lmd2lhCk80YVFtQ2VmMTliemMvOFpmMGxyMExrT2MwRjRZcThhRlBjTUk5cWx3ZU1FVHBQb3FNay9ibUR4SnRmUjdOKzQKSVZzSzkxOWwvMzZlMDJ5WitHUmZpbDNIaFJKV0o4MlNlbFVCUkZxcXR3TGh2MkdhNHlFekk1WER0bDNQVm9BZwpWNEdYVHoxNGFnQUZkSyt5MUxvTms1TWh3WWdNSHhReFl2dmFydHNlMFhYTTB2a1BCNDVlMkR5RlJXZ0tuZ3l4Ck5ZV2VWSUVJbVFJREFRQUJvNElEalRDQ0E0a3dId1lEVlIwakJCZ3dGb0FVZElXQXdHYkgzemZlejcwcE42b0QKSGI3dHpSY3dIUVlEVlIwT0JCWUVGQ3BFMzJQa2ZzNlFldm5zUW5QMnRrSk5XdEJWTUIwR0ExVWRFUVFXTUJTQwpDU291YVdKdExtTnZiWUlIYVdKdExtTnZiVEErQmdOVkhTQUVOekExTURNR0JtZUJEQUVDQWpBcE1DY0dDQ3NHCkFRVUZCd0lCRmh0b2RIUndPaTh2ZDNkM0xtUnBaMmxqWlhKMExtTnZiUzlEVUZNd0RnWURWUjBQQVFIL0JBUUQKQWdXZ01CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakNCbndZRFZSMGZCSUdYTUlHVQpNRWlnUnFCRWhrSm9kSFJ3T2k4dlkzSnNNeTVrYVdkcFkyVnlkQzVqYjIwdlJHbG5hVU5sY25SSGJHOWlZV3hICk1sUk1VMUpUUVZOSVFUSTFOakl3TWpCRFFURXRNUzVqY213d1NLQkdvRVNHUW1oMGRIQTZMeTlqY213MExtUnAKWjJsalpYSjBMbU52YlM5RWFXZHBRMlZ5ZEVkc2IySmhiRWN5VkV4VFVsTkJVMGhCTWpVMk1qQXlNRU5CTVMweApMbU55YkRDQmh3WUlLd1lCQlFVSEFRRUVlekI1TUNRR0NDc0dBUVVGQnpBQmhoaG9kSFJ3T2k4dmIyTnpjQzVrCmFXZHBZMlZ5ZEM1amIyMHdVUVlJS3dZQkJRVUhNQUtHUldoMGRIQTZMeTlqWVdObGNuUnpMbVJwWjJsalpYSjAKTG1OdmJTOUVhV2RwUTJWeWRFZHNiMkpoYkVjeVZFeFRVbE5CVTBoQk1qVTJNakF5TUVOQk1TMHhMbU55ZERBTQpCZ05WSFJNQkFmOEVBakFBTUlJQmZRWUtLd1lCQkFIV2VRSUVBZ1NDQVcwRWdnRnBBV2NBZFFDV2wyUy9WVmlYCnJmZERoMmczQ0VKMzZmQTYxZmFrOHpadVJxUS9EOHFweGdBQUFaUk00b3QrQUFBRUF3QkdNRVFDSUdlekRCTnQKK0t2MGV3R3FJdmJ5VExwdFVLd2xIUmJBTmpYVWNHLzFnT0UvQWlBNEZUYisyQUphcTNUSVI0d1c1VnRyV3ZaSgpQMjlacTVVNWxvWStBOWI2YndCMkFHUVJ4R3lrRXV5bmlSeWlBaTRBdkt0UEtBZlVIalVucStyKzFRUEpmYzN3CkFBQUJsRXppaTRVQUFBUURBRWN3UlFJaEFLRTBsbkpzMHRlc1NIN2RJNGU0ZHBqenNIb2RnQzR1VFRYY0VMTlMKWXRheUFpQUZ2MGJBSXE5OW80VVpqU3pvM3VaWVR6NzQvcGxYdWpCcXJLMkZKYUhTSUFCMkFFbWNtMm5lSFh6cwovRGJlellka3ByaGJyd3FIZ0JuUlZWTDc2ZXNwM2ZqREFBQUJsRXppaTVjQUFBUURBRWN3UlFJZ1cveEVtRk5zCnc5RVVmaHg5ZDJxYVVONVJDUXVOOUJrRFBDSDMwYWpLQ0s0Q0lRQ1hsR1Nta3pFUmZ1N082RUxFanpvMDNndmIKNGJLRHFyRS9Ud0UxUzFXTmpUQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFXdmJjM0xaaVN6ZnRpTHY1c2lDSAoxSUhZeTRZMjk5QmJWTGFjcGE4aTlmNE8yU2NFYXllN1JHOFBNVEloUlcxL085KzA3VTA2eTl3cDJHVWxRak1uCnJjZ2dXK1RzU3hsQnFCRks0MmQrSmxQNVF2OGpoNXJIN1ZhWXVsVEUyWjhiSEtrZzcwMTl0bFJLZDBISThBVmQKV3FvQWY2ZE1VQkxqdVl6eVVJTzZsMGJBNVg5bkZxclBuM1RCMzE4TnBhOFZ3OVdXNFgyMXNXYzVmdU92OWN1YQpkai9KT0lSN1ZQU1c2NTdpcGx0Sk9xTjdmTHBiZFJrYmVGdXY5RkFDTEhxT3crems3M1pna1FwSTZYKzU4aHBOCkNucEZ2YlRuS1RnYkNsOGlGcTRFWER5YVlQRHpKbXQ4TEJNYm9oNjlQNUtmRTBlVkNlVFBuTHhJUFZuTTBqYVMKbGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRE9jT2NrV0hFVFIwc3QKWnIwVmdFK2lNVXk1NUg5a01pdGdzRGp4cFZwSXhvNFh3dzRuZ09NWUJ1NzhUU2YwY2F1b2l2MmUxR3loRjhkegpSWnFrc0tsYW03Q0JrOFFpNVlhY3NxVnk1R1p1MVJOTkZqOEVjY3NxUlFDQ3ZJRkM2TjFlOE5PR2ZLWnE4RStNCnJkUFY5VVRSd1E1Z1lEMGFPdGRJSGM2RThaa1lHVTF6M25PSjBWSDFXdGUzUU5FSlVDVHJoOXRPR1M2OGZ5NDAKUzVOcUc5UVQxRWQ5MnlQYXg0N2tvanVlQmZTWWRBR29ndTQvZWxyN0l4WGtidzA5bU5MRklIUUhkNHEvNklKeAphRkc3cEVWdlo5eDk3T0NlWktsRmRUblFwaXBabHQyaXdiZUZDcEpGQkRaaEYzTHZwblJzbWlvWGV5MkZzaUxyCkkxLzh4UDEvQWdNQkFBRUNnZ0VBQ0czcndqd3FRZE5EYXBNclhWbGo1d2VFVG9MYUFNbGJwQk1PQUMvMFE4eDMKdU5pcUYwclgrdjh0ZXZmYmpjdW1hcmRpSzc0WXdXc3JKYlhOM3JPbjlwOHMwZDJxd0pJR3NSZEtVaXFwVkJVMwpPSXFVQUNaMVdVQ0FDTmFSb0ozSmpEcmhLRGltd3U4VkVIVjRsTi95ODIyaW5LVFJXZVRWTFlpcUNodWpXS3g5CkNvUU9qeFpkZFFxV0xNbEtndFRQOGUxSTI2MmNUbVhzVzhhSWQ4dDVpWUZmcFc2OHpLTzZqSmRVWktpdnE2MkcKc3hqYnF5Kzk1SitqbzBLeWUybzN0M2NFempJUEk4L1hhRmllTlFFTUZtRWVlVzVSNE1iZ3VNblpocTBVV1BzSwpWdHE0Ukp2OW02aC9RWGlqMGVCY281Rnp2MFB5RHZtUFkrZWUwT1plQVFLQmdRRHBQUm9wanpMYjhFRnUzcnU2Cktyc1BNYzUvbUc4S1pmY0NGejdjSHRQdTJEQzZxTytpRXhkVk5xZ2h6ZGtLK05kalFGUGNmdlRQZXhCOWhsWUEKN0NtOE1QRkxSNUhNditFL3BSQm5UNzVLZHdhT2NjT21ibFNGSE1LSjhJVXZld3daaERhQWFFWlNmQld0TU9GdwpKa0FrTDdMTWxkL0Ixbk9LaDM5YmR1ZEpRUUtCZ1FEaWxsT3ZGVkVjaUxyM28yR1JzUnhIK1lMQkJjbUZpSEo2CngzQ1JNQjRPMldZMjJPYXpsZVJZUXdqdU1PS2xGNmNiR0VBR1JKaVRIbGo2MFE0cXVwbERrbVJTdWVJcnBRMTEKU3A1MnMranY3WXpZdFpxUG00UzFtaG9xcU1iRDg2V2VEZnp6RUIweWJPUk8xZW04NXRqZStoN3FvN0Y5QWUrSwplU29TUDduV3Z3S0JnQUpTQlV5Y2pCajhEdXFYZEs2cGRpcjBoK1ZsRXRXN3BmVnpYY0M2M2NqbWhiV1ZzS3lnCkcvOVJCK011TlJhUzJ6RzFsaC8vYzFnTkZXRHFVVGk1SU1FcWkzd0FQa2NYTVpwOGZlbEpOYzl2MTdUYkZPTTIKL2NoRlBQbzZWbGplbElROGVINVdpenlPMTNoZG9DQ0pnT0hiUjZBWmJaeDBFYm96RnVWR0RZOEJBb0dBUCs1QQpRRWNZY3ArVmVTZU04T2x5M0UvbTk0VWxmZHFveWtHWlhpMmdYWG96WDhoRkYyaDBXLzdWOXphdHkvem5kanFhClhlcGV6aXVpMlduQXdJZVRsTUFxTkRra09rSkFrTlp6N1hRSGhpS1ZPZFBMZnpkVzgxSStqY2kvQkN5cmp2UE4KYWRzakVjWXRpSnpNYlRNSS82aThybUZ2UTZFWE1BL05zZ1p1N2NzQ2dZRUFpN2RWYzhkNmNUUVFKR05HL0l4Vwo2d1dJN1U3V094OTNVTlFEZGVyQUhNeFRBMXRKbHdTRmtNUzYrWXAvZzU0K0tTQWZLTWw4eDVUTnRxM1lpUEdiCkozOGtVU2lxV2VudFYzeExMVmJMRTRUYXgxbkptK0ZFNDV4VWxwYjJyTU5kYjFuOFpOdkVrTTJsRElUMHBKOWUKU3EvWkZXMG1jSGdjVWRpdm93WHJLNVE9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+type: Opaque
+---
+# MQSC file
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mq-mqsc
+  namespace: cp4i
+data:
+  mqsc: |
+    DEFINE QLOCAL(IN.Q) DEFPSIST(YES)
+    DEFINE QLOCAL(OUT.Q) DEFPSIST(YES)
+    DEFINE CHANNEL(EXTERNAL.SVRCONN) CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCAUTH(OPTIONAL) SSLCIPH('ANY_TLS12_OR_HIGHER')
+    SET CHLAUTH(EXTERNAL.SVRCONN) TYPE(BLOCKUSER) USERLIST(NOBODY)
+    REFRESH SECURITY TYPE(CONNAUTH)
+---
+# mqwebuser.xml file
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mq-webuser
+  namespace: cp4i
+immutable: false
+data:
+  mqwebuser.xml: <server>    <featureManager>        <feature>appSecurity-2.0</feature>        <feature>basicAuthenticationMQ-1.0</feature>    </featureManager>    <enterpriseApplication id="com.ibm.mq.console">        <application-bnd>            <security-role name="MQWebAdmin">                <group name="MQWebAdminGroup" realm="defaultRealm"/>            </security-role>            <security-role name="MQWebAdminRO">                <user name="mqreader" realm="defaultRealm"/>            </security-role>            <security-role name="MQWebUser">                <special-subject type="ALL_AUTHENTICATED_USERS"/>            </security-role>            <security-role name="MFTWebAdmin">                <user name="mftadmin" realm="defaultRealm"/>            </security-role>            <security-role name="MFTWebAdminRO">                <user name="mftreader" realm="defaultRealm"/>            </security-role>        </application-bnd>    </enterpriseApplication>    <enterpriseApplication id="com.ibm.mq.rest">        <application-bnd>            <security-role name="MQWebAdmin">                <group name="MQWebAdminGroup" realm="defaultRealm"/>            </security-role>            <security-role name="MQWebAdminRO">                <user name="mqreader" realm="defaultRealm"/>            </security-role>            <security-role name="MQWebUser">                <special-subject type="ALL_AUTHENTICATED_USERS"/>            </security-role>            <security-role name="MFTWebAdmin">                <user name="mftadmin" realm="defaultRealm"/>            </security-role>            <security-role name="MFTWebAdminRO">                <user name="mftreader" realm="defaultRealm"/>            </security-role>        </application-bnd>    </enterpriseApplication>    <basicRegistry id="basic" realm="defaultRealm">        <user name="mqadmin" password="mqadmin"/>        <user name="mqreader" password="mqreader"/>        <user name="mftadmin" password="mftadmin"/>        <user name="mftreader" password="mftreader"/>        <group name="MQWebAdminGroup">           <member name="mqadmin"/>        </group>    </basicRegistry></server>
+---
+# create a test qmgr
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: testqmgr
+  namespace: cp4i
+spec:
+  license:
+    accept: true
+    license: L-NUUP-23NH8Y
+    use: Production
+  pki:
+    keys:
+      - name: default
+        secret:
+          items:
+            - tls.key
+            - tls.crt
+          secretName: mq-tls
+    trust:
+      - name: default
+        secret:
+          items:
+            - tls.crt
+            - tls.key
+          secretName: mq-tls
+  queueManager:
+    name: TESTQMGR
+    availability:
+      type: SingleInstance
+    mqsc:
+      - configMap:
+          items:
+            - mqsc
+          name: mq-mqsc
+    storage:
+      queueManager:
+        type: persistent-claim
+  version: 9.4.2.1-r2
+  web:
+    console:
+      authentication:
+        provider: manual
+      authorization:
+        provider: manual
+    enabled: true
+    manualConfig:
+      configMap:
+        name: mq-webusers
+---
+# create a route for the channel for SNI
+# See: https://www.ibm.com/support/pages/ibm-websphere-mq-how-does-mq-provide-multiple-certificates-certlabl-capability
+# i.e. CHANNEL(EXTERNAL.SVRCONN) would be external2e-svrconn
+# Service names must match
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: testqmgr-ibm-mq-external-svrconn
+  namespace: cp4i
+spec:
+  host: external2e-svrconn.chl.mq.ibm.com
+  to:
+    kind: Service
+    name: testqmgr-ibm-mq
+    weight: 100
+  port:
+    targetPort: qmgr
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: None
+  wildcardPolicy: None
