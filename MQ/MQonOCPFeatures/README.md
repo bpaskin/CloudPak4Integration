@@ -11,4 +11,4 @@ The script does the following:
 8. Creates a ConfigMap for the web user interface granting all access to those authenticated
 9. Creates a ConfigMap for the qm.ini and MQ definitions for the QMGR
 10. Creates a QMGR called `QM1` which is a single instance QMGR that will inject the above (qm.ini, mqsc configs (both regular and ldap), certificates, exit, and web users for console)
-11. Create Openshift Route for the channel EXTERNAL.TO.SVRCONN
+11. Create Openshift Route for the channel EXTERNAL.SVRCONN
